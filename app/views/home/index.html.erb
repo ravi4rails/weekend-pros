@@ -1,2 +1,68 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="jumbotron">
+  <h1 class="display-6 text-center">Find professionals you want</h1>
+  <div class="col-md-8 offset-md-2">
+    <div class="card mt-3">
+      <div class="card-body">
+        <form class="mt-3">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" name="" class="form-control" placeholder="Choose skill from here" id="skills">
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group">
+                <input type="text" name="" class="form-control" placeholder="Select location from here">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-primary btn-block mb-2"><i class="fa fa-search"></i> Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4">
+    <p class="lead text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="counter-div">
+        <div class="counter-val">
+          <h1 class="text-center">100<br>Plus </h1>
+        </div>
+        <div class="mt-3">
+          <h4 class="text-center">Skills / Talents</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="counter-div">
+        <div class="counter-val">
+          <h1 class="text-center">2000<br>Plus </h1>
+        </div>
+        <div class="mt-3">
+          <h4 class="text-center">Professionals</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="counter-div">
+        <div class="counter-val">
+          <h1 class="text-center">10000<br>Plus </h1>
+        </div>
+        <div class="mt-3">
+          <h4 class="text-center">Satisfied Users</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pro-subscribe">
+  <h4 class="text-center">Want to utilize you skills to earn more? Why thinking?<span class="ml-5"></span> <%= link_to "Sign Up as Professional", "#", class: "btn btn-outline-primary" %></h4>
+</div>

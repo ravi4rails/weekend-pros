@@ -1,0 +1,33 @@
+@media screen and (min-width:768px) {
+  .nav-header {height:75px;}
+  .nav-header a {font-size: 20px;}
+  .counter-val{
+    height: 171px;
+    width: 61%;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .counter-val{
+    height: 140px;
+    width: 61%;
+  }
+}
+.counter-val{
+  background-color: #fff;
+  margin: auto;
+  border-radius: 50%;
+  border: 8px solid #277b5e;
+  padding-left:0px;
+  padding-top:30px;
+}
+.nav-header a {color:#fff !important;}
+.counter-div {padding:30px;}
+.counter-val h1 {color:#5c5d5f;}
+.bg-site {background-color: #277b5e !important;}
+.pro-subscribe {
+  height: 140px;
+  background-color: #2d2d2d;
+  padding-top: 4%;
+  color: #fff;
+}

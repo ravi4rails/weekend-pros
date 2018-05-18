@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
+//= require jquery-ui
+//= require skills_autocomplete
 //= require turbolinks
