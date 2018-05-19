@@ -31,3 +31,28 @@
   padding-top: 4%;
   color: #fff;
 }
+.card-header-auth-form {
+  background-color: rgb(40, 123, 94);
+  color:#fff;
+  border-radius: 0px !important;
+}
+.card-auth {
+  border: 1px solid rgb(41, 123, 94);
+  border-radius: 0px;
+}
+.btn-auth {
+  background-color: #277b5e;
+  border-color: #277b5e;
+  color:#fff;
+  border-radius: 0px;
+}
+.card-auth .form-control {
+  border-color: #277b5e;
+  border-radius: 0px;
+}
+.btn-auth-del {
+  background-color: #d80b39;
+  border-color: #d80b39;
+  color:#fff;
+  border-radius: 0px;
+}

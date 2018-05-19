@@ -1,0 +1,157 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-8">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :latitude, id: :user_lat %>
+        <%= f.hidden_field :longitude, id: :user_long %>
+        <div class="card mt-4 card-auth">
+          <div class="card-header card-header-auth-form">
+            <h3 class="card-title">Personal Information</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <%= f.text_field :first_name, class: "form-control", placeholder: "Enter first name" %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <%= f.text_field :last_name, class: "form-control", placeholder: "Enter last name" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Contact</label>
+                  <%= f.text_field :contact, class: "form-control", placeholder: "Enter contact number" %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Address</label>
+                  <%= f.text_field :address, class: "form-control", id: :autocomplete, onFocus: "geolocate()", placeholder: "Enter address" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Role</label>
+                  <%= f.text_field :role, class: "form-control", disabled: true %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-4 card-auth">
+          <div class="card-header card-header-auth-form">
+            <h3 class="card-title">Account Information</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Email</label>
+                  <%= f.email_field :email, class: "form-control", placeholder: "Enter email" %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Username</label>
+                  <%= f.text_field :username, class: "form-control", placeholder: "Enter username" %>
+                </div>
+              </div>
+            </div>
+            <p><i>(leave blank passwords if you don't want to change it)</i></p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Password</label>
+                  <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Password Confirmation</label>
+                  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password" %>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Current password</label> <i>(we need your current password to confirm your changes)</i>
+              <%= f.password_field :current_password, class: "form-control", placeholder: "Confirm password" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-4 card-auth">
+          <div class="card-header card-header-auth-form">
+            <h3 class="card-title">General Information</h3>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>About</label>
+              <%= f.text_area :about, class: "form-control", placeholder: "Write something about yourself", rows: "10" %>
+            </div>
+            <div class="form-group">
+              <label>Profile picture</label><br>
+              <%= f.file_field :profile_pic %>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <%= f.submit "Update Account", class: "btn btn-auth" %> | <%= render "users/shared/links" %>
+        </div>
+        <hr>
+        <h3>Cancel my account</h3>
+
+        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-auth-del" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  var placeSearch, autocomplete;
+  function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(
+        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+        {types: ['geocode']});
+
+    autocomplete.addListener('place_changed', fillInAddress);
+  }
+
+  function fillInAddress() {
+    var place = autocomplete.getPlace();
+    lat = place.geometry.location.lat();
+    lng = place.geometry.location.lng();
+    $("#user_lat").val(lat); 
+    $("#user_long").val(lng);
+  }
+
+  function geolocate() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var geolocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        var circle = new google.maps.Circle({
+          center: geolocation,
+          radius: position.coords.accuracy
+        });
+        autocomplete.setBounds(circle.getBounds());
+      });
+    }
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZO1fKh_fnrQphRnEy7knxPUcOjKQWYPU&libraries=places&callback=initAutocomplete"
+    async defer></script>
