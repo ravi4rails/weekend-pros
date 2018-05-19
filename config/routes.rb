@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/search_pro'
+
   root 'home#index'
   get "/skill-keyword" => "home#auto_complete"
   

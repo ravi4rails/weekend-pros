@@ -58,3 +58,5 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
+gem 'geocoder'
+gem 'active_model_serializers', '~> 0.10.0'

@@ -40,7 +40,7 @@
   border: 1px solid rgb(41, 123, 94);
   border-radius: 0px;
 }
-.btn-auth {
+.btn-auth, .btn-pro-details {
   background-color: #277b5e;
   border-color: #277b5e;
   color:#fff;
