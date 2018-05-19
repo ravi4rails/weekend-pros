@@ -56,3 +56,17 @@
   color:#fff;
   border-radius: 0px;
 }
+.drop-links a {
+  color:#000 !important;
+}
+.drop-links a:hover {
+  background-color: #277b5e !important;
+  color:#fff !important;
+}
+.account-img {
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:3px solid #287b5e;
+  margin-left: 18%;
+}
