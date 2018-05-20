@@ -90,6 +90,10 @@
               <%= f.text_area :about, class: "form-control", placeholder: "Write something about yourself", rows: "10" %>
             </div>
             <div class="form-group">
+              <label>Set Skills</label>
+              <%= f.text_field :skill_list, class: "form-control", placeholder: "Write some skill(coma saperated)" %>
+            </div>
+            <div class="form-group">
               <label>Profile picture</label><br>
               <%= f.file_field :profile_pic %>
             </div>

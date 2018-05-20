@@ -9,6 +9,8 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
 
+  acts_as_taggable_on :skills
+
   def name
     "#{self.first_name} #{self.last_name}"
   end

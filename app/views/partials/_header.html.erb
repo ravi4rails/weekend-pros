@@ -23,8 +23,8 @@
           <% if user_signed_in? %>
             <%= image_tag current_user.profile_pic_url, class: "mb-2 account-img" %>
             <%= link_to current_user.username, "", class: "dropdown-item dropdown-link"%>
-            <%= link_to "Sign Out", destroy_user_session_path, class: "dropdown-item dropdown-link", method: :delete %>
             <%= link_to "Edit Account", edit_user_registration_path, class: "dropdown-item dropdown-link" %>
+            <%= link_to "Sign Out", destroy_user_session_path, class: "dropdown-item dropdown-link", method: :delete %>
           <% else %>
             <%= link_to "Sign In", new_user_session_path, class: "dropdown-item dropdown-link"%>
             <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item dropdown-link"%>

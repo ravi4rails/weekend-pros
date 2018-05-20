@@ -1,18 +1,16 @@
 Rails.application.routes.draw do
-  get 'search/search_pro'
-
-  root 'home#index'
-  get "/skill-keyword" => "home#auto_complete"
-  
   devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
     confirmations: 'users/confirmations', 
     passwords: 'users/passwords',
-    registrations: 'users/registrations',
-    sessions: 'users/sessions',
     unlocks: 'users/unlocks'
   }
+  root 'home#index'
+  get "/skill-keyword" => "home#auto_complete"
+  get 'search/search_pro'
   
-  resources :skills
+  resources :users, only: [:show, :index], path: :professional
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

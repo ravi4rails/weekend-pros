@@ -9,7 +9,9 @@
               <div class="card-body">
                 <h5 class="card-title"><%= professional.name.capitalize %></h5>
                 <p class="card-text"><%= professional.address %></p>
-                <a href="#" class="btn btn-pro-details">Go somewhere</a>
+                <%= link_to professional, class: "btn btn-pro-details" do %>
+                  <i class="fa fa-eye"></i> View Profile
+                <% end %>
               </div>
             </div>
           </div>
