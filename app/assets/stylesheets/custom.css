@@ -1,9 +1,22 @@
+body {background-color: #f7f7f7;}
+
 @media screen and (min-width:768px) {
   .nav-header {height:75px;}
   .nav-header a {font-size: 20px;}
   .counter-val{
     height: 171px;
     width: 61%;
+  }
+  .card-pro-d img {
+    height:200px;
+  }
+  .card-pro-d {
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 4px 10px 0 rgba(0,0,0,0.12)!important;
+  }
+  .card-pro-d .address-pro{
+    min-height: 80px;
+    font-size: 13px;
   }
 }
 
@@ -40,7 +53,7 @@
   border: 1px solid rgb(41, 123, 94);
   border-radius: 0px;
 }
-.btn-auth, .btn-pro-details {
+.btn-auth {
   background-color: #277b5e;
   border-color: #277b5e;
   color:#fff;
@@ -69,4 +82,27 @@
   border-radius:50%;
   border:3px solid #287b5e;
   margin-left: 18%;
+}
+.btn-pro-details {
+  background-color: #673AB7;
+  border-color: #673AB7;
+  color:#fff;
+  border-radius: 0px;
+}
+.btn-pro-details:hover {
+  color:#fff;
+  box-shadow: 4px 2px 4px 0 rgba(0,0,0,0.16),0 4px 10px 0 rgba(0,0,0,0.12)!important;
+}
+.profile-pro {
+  min-height:600px;
+  width:100%;
+  padding:2.5%;
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 4px 10px 0 rgba(0,0,0,0.12)!important;
+}
+.profile-pro hr {
+  border-top:4px solid rgb(40, 123, 94);
+}
+.skill-tag {
+  font-size: 14px;
 }
