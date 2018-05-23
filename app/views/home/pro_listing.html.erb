@@ -1,0 +1,78 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 col-sm-4">
+      <div class="filter-pro-list mb-5 mt-4" >
+        <p class="lead text-center">Search professional according to skills</p>
+        <ul class="list-group">
+          
+          <%= link_to professional_listing_path(skill: "Teaching"), class: "list-group-item" do %>
+            Teaching <span class="badge badge-success float-right"><%= count_user_for_skill("Teaching") %></span>
+          <% end %>
+          
+          <%= link_to professional_listing_path(skill: "Web Development"), class: "list-group-item" do %>
+            Web Development <span class="badge badge-success float-right"><%= count_user_for_skill("Web Development") %></span>
+          <% end %>
+          
+          <%= link_to professional_listing_path(skill: "Web Designing"), class: "list-group-item" do %>
+            Web Designing <span class="badge badge-success float-right"><%= count_user_for_skill("Web Designing") %></span>
+          <% end %>
+          
+          <%= link_to professional_listing_path(skill: "Sports Coaching"), class: "list-group-item" do %>
+            Sports Coaching <span class="badge badge-success float-right"><%= count_user_for_skill("Sports Coaching") %></span>
+          <% end %>
+          
+          <%= link_to professional_listing_path(skill: "Swimming Coaching"), class: "list-group-item" do %>
+            Swimming Coaching <span class="badge badge-success float-right"><%= count_user_for_skill("Swimming Coaching") %></span>
+          <% end %>
+
+          <%= link_to professional_listing_path(skill: "Cooking"), class: "list-group-item" do %>
+            Cooking <span class="badge badge-success float-right"><%= count_user_for_skill("Cooking") %></span>
+          <% end %>
+
+          <%= link_to professional_listing_path(skill: "Digital Marketing"), class: "list-group-item" do %>
+            Digital Marketing <span class="badge badge-success float-right"><%= count_user_for_skill("Digital Marketing") %></span>
+          <% end %>
+
+          <%= link_to professional_listing_path(skill: "Email Marketing"), class: "list-group-item" do %>
+            Email Marketing <span class="badge badge-success float-right"><%= count_user_for_skill("Email Marketing") %></span>
+          <% end %>
+
+          <%= link_to professional_listing_path(skill: "Search Engine Optmization"), class: "list-group-item" do %>
+            Search Engine Optmization <span class="badge badge-success float-right"><%= count_user_for_skill("Search Engine Optmization") %></span>
+          <% end %>
+
+          <%= link_to professional_listing_path(skill: "Human Resource"), class: "list-group-item" do %>
+            Human Resource <span class="badge badge-success float-right"><%= count_user_for_skill("Human Resource") %></span>
+          <% end %>
+
+          <%= link_to professional_listing_path(skill: "Real Estate Planning"), class: "list-group-item" do %>
+            Real Estate Planning <span class="badge badge-success float-right"><%= count_user_for_skill("Real Estate Planning") %></span>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-8">
+      <% if @users.present? %>
+        <div class="row">  
+          <% @users.each do |user| %>
+            <div class="col-md-4">
+              <div class="card mt-1 mb-1 card-pro-d">
+                <%= image_tag user.profile_pic_url, class: "card-img-top" %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= user.name.capitalize %></h5>
+                  <div class="address-pro">
+                    <p class="card-text"><%= user.address %></p>
+                  </div>
+                  <%= link_to user, class: "btn btn-pro-details" do %>
+                    <i class="fa fa-eye"></i> View Profile
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%= paginate @users %>
+      <% end %>
+    </div>
+  </div>
+</div>

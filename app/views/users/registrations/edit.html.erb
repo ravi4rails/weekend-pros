@@ -54,6 +54,14 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Primary Skill</label>
+                  <%= f.text_field :primary_skill, class: "form-control", placeholder: "Select a primary skill(eg:Web Development)" %>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -165,3 +173,23 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZO1fKh_fnrQphRnEy7knxPUcOjKQWYPU&libraries=places&callback=initAutocomplete"
     async defer></script>
+
+<script>
+  $( function() {
+    var availableTags = [
+      "Web Development",
+      "Teaching",
+      "Web Designing",
+      "Digital Marketing",
+      "Search Engine Optimization",
+      "Sports Coaching",
+      "Swimming Coaching",
+      "Cooking", 
+      "Real Estate Planning", 
+      "Email Marketing"
+    ];
+    $( "#user_primary_skill" ).autocomplete({
+      source: availableTags
+    });
+  });
+</script>

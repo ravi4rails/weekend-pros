@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get "/skill-keyword" => "home#auto_complete"
   get 'search/search_pro'
-  
+  get '/professional-listing' => "home#pro_listing"
   resources :users, only: [:show, :index], path: :professional
 
 

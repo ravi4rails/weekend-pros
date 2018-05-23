@@ -11,6 +11,9 @@ class User < ApplicationRecord
 
   acts_as_taggable_on :skills
 
+  paginates_per 10
+
+
   def name
     "#{self.first_name} #{self.last_name}"
   end
