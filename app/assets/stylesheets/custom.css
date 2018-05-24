@@ -18,6 +18,9 @@ body {background-color: #f7f7f7;}
     min-height: 80px;
     font-size: 13px;
   }
+  .profile-image img{
+    margin-left: -5%;
+  }
 }
 
 @media screen and (max-width:767px) {

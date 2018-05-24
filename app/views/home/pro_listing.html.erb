@@ -51,22 +51,48 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-9 col-sm-8">
-      <% if @users.present? %>
-        <div class="row">  
+
+    <% if params[:param].present? %>
+      <div class="col-md-9 col-sm-8">  
+        <div class="row ">
+          <div class="col-md-12">
+            <hr class="hr-primary"/>
+            <ol class="breadcrumb-left bread-primary">
+              <div class="buttons pull-right">
+                <div class="button-group ">
+                  <%= link_to professional_listing_path, class: "btn btn-primary btn-sm" do %>
+                  <i class="fa fa-th"></i> Grid View 
+                  <% end %>
+                   <%= link_to professional_listing_path(:param => 'list_view'), class: "btn btn-primary btn-sm" do %>
+                  <i class="fa fa-th-list"></i> List View 
+                  <% end %>
+                </div>     
+              </div>  
+            </ol>
+          </div>  
+        </div>  
+        <% if @users.present? %>
           <% @users.all.each do |user| %>
-            <div class="col-md-4">
-              <div class="card mt-1 mb-1 card-pro-d">
-                <% if user.profile_pic_url.present? %>
-                  <%= image_tag user.profile_pic_url, class: "card-img-top"%>
-                <%else%>
-                  <%= image_tag "dummy.jpg", class: "card-img-top"%>
-                <% end %>  
-                <div class="card-body">
-                  <h5 class="card-title"><%= user.name.capitalize %></h5>
-                  <div class="address-pro">
-                    <p class="card-text"><%= user.address %></p>
+            <div class="row mt-5 border mr-5 ml-5">  
+              <div class="col-md-4">
+                <div class="profile-image">
+                 <% if user.profile_pic_url.present? %>
+                    <%= image_tag user.profile_pic_url,  class: "img-responsive", style: "width:170px;height:170px;"%>
+                  <%else%>
+                    <%= image_tag "dummy.jpg", class: "img-responsive", style: "width:170px;height:170px;" %>
+                  <% end %>  
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="mt-5">
+                  <div class="list-title">
+                    <h4><%= user.name.capitalize %></h4>
                   </div>
+                  <div class="list-address">
+                    <p><%= user.address %></p>
+                  </div>
+                </div>  
+                <div class="view-list pull-right">
                   <%= link_to user, class: "btn btn-pro-details" do %>
                     <i class="fa fa-eye"></i> View Profile
                   <% end %>
@@ -74,9 +100,52 @@
               </div>
             </div>
           <% end %>
-        </div>
-        <%= paginate @users %>
-      <% end %>
-    </div>
+          <%= paginate @users %>
+        <% end %>
+      </div>
+    <%else%>
+      <div class="col-md-9 col-sm-8">
+        <% if @users.present? %>
+          <div class="row ">
+            <div class="col-md-12">
+              <hr class="hr-primary"/>
+              <ol class="breadcrumb-left bread-primary">
+                <div class="buttons pull-right">
+                  <div class="button-group ">
+                    <%= link_to professional_listing_path, class: "btn btn-primary btn-sm" do %>
+                    <i class="fa fa-th"></i> Grid View 
+                    <% end %>
+                     <%= link_to professional_listing_path(:param => 'list_view'), class: "btn btn-primary btn-sm" do %>
+                    <i class="fa fa-th-list"></i> List View 
+                    <% end %>
+                  </div>     
+                </div>  
+              </ol>
+            </div>    
+            <% @users.all.each do |user| %>
+              <div class="col-md-4">
+                <div class="card mt-1 mb-1 card-pro-d">
+                  <% if user.profile_pic_url.present? %>
+                    <%= image_tag user.profile_pic_url, class: "card-img-top"%>
+                  <%else%>
+                    <%= image_tag "dummy.jpg", class: "card-img-top"%>
+                  <% end %>  
+                  <div class="card-body">
+                    <h5 class="card-title"><%= user.name.capitalize %></h5>
+                    <div class="address-pro">
+                      <p class="card-text"><%= user.address %></p>
+                    </div>
+                    <%= link_to user, class: "btn btn-pro-details" do %>
+                      <i class="fa fa-eye"></i> View Profile
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <%= paginate @users %>
+        <% end %>
+      </div>  
+    <%end%> 
   </div>
 </div>

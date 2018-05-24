@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     unlocks: 'users/unlocks'
   }
+  match '/professional-listing/:param', to: 'home#pro_listing', via: [:get]
   root 'home#index'
   get "/skill-keyword" => "home#auto_complete"
   get 'search/search_pro'
