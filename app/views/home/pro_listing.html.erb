@@ -83,20 +83,26 @@
                   <% end %>  
                 </div>
               </div>
-              <div class="col-md-8">
-                <div class="mt-5">
-                  <div class="list-title">
-                    <h4><%= user.name.capitalize %></h4>
+              <div class="col-md-8"> 
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="mt-5">
+                      <div class="list-title">
+                        <h4><%= user.name.capitalize %></h4>
+                      </div>
+                      <div class="list-address">
+                        <p><%= user.address %></p>
+                      </div>
+                    </div> 
                   </div>
-                  <div class="list-address">
-                    <p><%= user.address %></p>
-                  </div>
+                  <div class="col-md-4">   
+                    <div class="view-list ">
+                      <%= link_to user, class: "btn btn-pro-details list-button-view" do %>
+                        <i class="fa fa-eye"></i> View Profile
+                      <% end %>
+                    </div>
+                  </div>  
                 </div>  
-                <div class="view-list pull-right">
-                  <%= link_to user, class: "btn btn-pro-details list-button-view" do %>
-                    <i class="fa fa-eye"></i> View Profile
-                  <% end %>
-                </div>
               </div>
             </div>
           <% end %>

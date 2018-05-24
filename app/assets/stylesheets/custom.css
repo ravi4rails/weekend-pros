@@ -19,7 +19,7 @@ body {background-color: #f7f7f7;}
     font-size: 13px;
   }
   .profile-image img{margin-left: -5%;}
-  .list-button-view{margin-top: -11%;}
+  .list-button-view{margin-top: 71%;}
 }
 
 @media screen and (max-width:767px) {
