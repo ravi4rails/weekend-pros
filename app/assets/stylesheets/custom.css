@@ -18,9 +18,8 @@ body {background-color: #f7f7f7;}
     min-height: 80px;
     font-size: 13px;
   }
-  .profile-image img{
-    margin-left: -5%;
-  }
+  .profile-image img{margin-left: -5%;}
+  .list-button-view{margin-top: -11%;}
 }
 
 @media screen and (max-width:767px) {
