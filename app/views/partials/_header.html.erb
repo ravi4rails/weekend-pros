@@ -20,8 +20,12 @@
           Accounts
         </a>
         <div class="dropdown-menu dropdown-menu-right drop-links" aria-labelledby="navbarDropdownMenuLink">
-          <% if user_signed_in? %>
-            <%= image_tag current_user.profile_pic_url, class: "mb-2 account-img" %>
+          <% if user_signed_in? %> 
+            <% if current_user.profile_pic_url.present? %>
+              <%= image_tag current_user.profile_pic_url, class: "mb-2 account-img" %>
+            <%else%>
+              <%= image_tag "dummy.jpg", class: "card-img-top"%>  
+            <%end%>
             <%= link_to current_user.username, "", class: "dropdown-item dropdown-link"%>
             <%= link_to "Edit Account", edit_user_registration_path, class: "dropdown-item dropdown-link" %>
             <%= link_to "Sign Out", destroy_user_session_path, class: "dropdown-item dropdown-link", method: :delete %>
