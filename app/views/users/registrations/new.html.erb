@@ -114,7 +114,7 @@
           </div>
         </div>
         <div class="mt-4">
-          <%= f.submit "Sign up", class: "btn btn-auth" %> | <%= render "users/shared/links" %>
+          <%= f.submit "Sign up", class: "btn btn-auth" %> | <%= link_to "Log in", new_session_path(resource_name),class: "text-dark"%>
         </div>
       <% end %>
       <div class="mb-3"></div>
