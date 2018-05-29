@@ -6,7 +6,11 @@
           <% @users.each do |user| %>
             <div class="col-md-4">
               <div class="card mt-1 mb-1 card-pro-d">
-                <%= image_tag user.profile_pic_url, class: "card-img-top" %>
+                <% if user.profile_pic_url.present? %>
+                 <%= image_tag user.profile_pic_url, class: "card-img-top" %>
+                <%else%>
+                  <%= image_tag "dummy.jpg", class: "img-responsive", style: "width:170px;height:170px;" %>
+                <% end %>   
                 <div class="card-body">
                   <h5 class="card-title"><%= user.name.capitalize %></h5>
                   <div class="address-pro">

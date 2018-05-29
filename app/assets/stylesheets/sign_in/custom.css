@@ -1,4 +1,4 @@
-body {background-color: #f7f7f7;}
+body {background-image:url('weekend.jpg');}
 
 @media screen and (min-width:768px) {
   .nav-header {height:75px;}
@@ -20,7 +20,7 @@ body {background-color: #f7f7f7;}
   }
   .profile-image img{margin-left: -5%;}
   .list-button-view{margin-top: 71%;}
-
+  .sign-in-page{margin-top: 35%;}
 }
 
 @media screen and (max-width:767px) {
@@ -91,6 +91,11 @@ body {background-color: #f7f7f7;}
   border-color: #673AB7;
   color:#fff;
   border-radius: 0px;
+}
+.sign-in-page{
+
+  margin-top: 35%;
+  
 }
 .btn-pro-details:hover {
   color:#fff;
