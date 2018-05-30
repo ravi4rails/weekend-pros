@@ -11,7 +11,7 @@ class HomeController < ApplicationController
 
   def pro_listing
     if params[:skill].present? 
-      if params[:skill] == "Teaching" 
+      if params[:skill] == "Teaching"
         @users = User.where(primary_skill: params[:skill]).page params[:page]
       elsif params[:skill] == "Web Development"
         @users = User.where(primary_skill: params[:skill]).page params[:page]

@@ -5,7 +5,7 @@
         <p class="lead text-center">Search professional according to skills</p>
         <ul class="list-group">
           
-          <%= link_to professional_listing_path(skill: "Teaching"), class: "list-group-item" do %>
+          <%= link_to professional_listing_path(skill: "Teaching"),class: "list-group-item" do %>
             Teaching <span class="badge badge-success float-right"><%= count_user_for_skill("Teaching") %></span>
           <% end %>
           
