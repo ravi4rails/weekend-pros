@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   def index
-    if params[:skill][:param].present?
+    if params[:skill].present?
       @users = User.all.map {|u| u if u.skill_list.include? params[:skill]}.compact
     else 
       @users = User.all

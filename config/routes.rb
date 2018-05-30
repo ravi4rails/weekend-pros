@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   }
   match '/professional-listing/:param', to: 'home#pro_listing', via: [:get]
   root 'home#index'
+
   get "/skill-keyword" => "home#auto_complete"
   get 'search/search_pro'
   get '/professional-listing' => "home#pro_listing"
