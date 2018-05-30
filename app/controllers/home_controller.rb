@@ -9,6 +9,12 @@ class HomeController < ApplicationController
     end
   end
 
+
+
+  def portfolio
+  
+  end
+
   def pro_listing
     if params[:skill].present? 
       if params[:skill] == "Teaching"

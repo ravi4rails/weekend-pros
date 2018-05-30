@@ -1,0 +1,25 @@
+<div class="back-link ml-5 mt-4">
+  <span>
+   <button class="btn back-link-btn"><i class="fa fa-arrow-left"></i> <%=link_to "Back", articles_path, class: "text-white"%></button>
+    <button class="btn back-link-btn"><i class="fa fa-eye"></i> <%=link_to "Show", articles_path, class: "text-white"%></button>
+  </span>  
+</div>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <div class="sign-in-page shadow">  
+        <div class="card card-auth">
+          <div class="card-header card-header-auth-form">
+            <h3 class="card-title text-center">Edit Article</h3>
+          </div> 
+          <div class="card-body">
+           <%= render 'form', article: @article %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>              
+
+
+

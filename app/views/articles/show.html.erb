@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="profile-pro mt-5 mb-5">
+        <div class="row">
+          <div class="col-md-4 offset-md-4">
+            <% if @article.cover_image_url.present? %>
+              <%= image_tag @article.cover_image_url,  class: "img-responsive ml-3", style: "width:170px;height:170px;"%>
+            <%else%>
+              <%= image_tag "dummy.jpg", class: "img-responsive ml-3 ", style: "width:170px;height:170px;" %>
+            <% end %>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-md-1 mt-2">
+            <h4 class="text-center"><%= @user.name %></h4>
+          </div>
+        </div>
+          <div class="row">
+          <div class="col-md-12">
+            <h4>Title</h4>
+            <hr>
+            <p><%= @article.title %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Description</h4>
+            <hr>
+            <p><%= raw(@article.content) %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>    

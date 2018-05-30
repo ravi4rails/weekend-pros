@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   }
   match '/professional-listing/:param', to: 'home#pro_listing', via: [:get]
   root 'home#index'
-
+  get "/portfolio" => "home#portfolio"
   get "/skill-keyword" => "home#auto_complete"
   get 'search/search_pro'
   get '/professional-listing' => "home#pro_listing"

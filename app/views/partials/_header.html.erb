@@ -26,6 +26,7 @@
             <%else%>
               <%= image_tag "dummy.jpg", class: "card-img-top"%>  
             <%end%>
+            <%= link_to "Profile", user_path(current_user), class: "dropdown-item dropdown-link"%>  
             <%= link_to current_user.username, "", class: "dropdown-item dropdown-link"%>
             <%= link_to "Edit Account", edit_user_registration_path, class: "dropdown-item dropdown-link" %>
             <%= link_to "Sign Out", destroy_user_session_path, class: "dropdown-item dropdown-link", method: :delete %>

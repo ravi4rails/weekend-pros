@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode
+  has_many :articles
 
   acts_as_taggable_on :skills
 
