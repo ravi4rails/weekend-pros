@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
+//= require owl.carousel
 //= require summernote/summernote-bs4.min
 //= require summernote-init
 //= require jquery-ui

@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode
-  has_many :articles
+  has_many :articles, dependent: :destroy
 
   acts_as_taggable_on :skills
 

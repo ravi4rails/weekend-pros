@@ -12,7 +12,9 @@ class HomeController < ApplicationController
 
 
   def portfolio
-  
+  @articles =Article.all
+  @videos =Video.all
+  @user = current_user
   end
 
   def pro_listing
