@@ -70,4 +70,5 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 gem 'kaminari'
 gem 'summernote-rails'
+gem 'cocoon'
 

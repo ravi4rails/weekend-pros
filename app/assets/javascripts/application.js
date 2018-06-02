@@ -19,4 +19,5 @@
 //= require summernote-init
 //= require jquery-ui
 //= require skills_autocomplete
+//= require cocoon
 //= require turbolinks

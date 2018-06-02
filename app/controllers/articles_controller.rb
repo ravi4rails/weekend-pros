@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /articles
   # GET /articles.json
@@ -11,7 +12,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-  @user = current_user
+    @user = current_user
+    @article = Article.find(params[:id])
+    @comment = @article.comments
   end
 
   # GET /articles/new
@@ -62,6 +65,8 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -73,4 +78,6 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :content, :user_id, :cover_image)
     end
+
+   
 end
