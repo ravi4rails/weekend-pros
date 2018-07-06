@@ -1,3 +1,11 @@
+<% content_for :head do %>
+  <meta property="og:title" content="<%= "#{@article.title}" %>" />
+  <meta property="og:description" content="<%= "#{@article.content}" %>" />
+  <meta property="og:url" content="http://weekend-pros.herokuapp.com/articles/<%="#{@article.id}" %>" />
+  <meta property="og:image" content="<%= "#{@article.cover_image_url}" %>" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="<%= "#{@article.title}" %>" />
+<% end %>
 <div class="container">
   <button class="btn back-link-btn mt-5"><i class="fa fa-arrow-left"></i>  <%=link_to "Back", portfolio_path, class: "text-white"%>
   </button>
@@ -5,12 +13,34 @@
     <div class="col-md-8 offset-md-2">
       <div class="profile-pro mt-5 mb-5">
         <div class="row">
-          <div class="col-md-4 offset-md-4">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
             <% if @article.cover_image_url.present? %>
               <%= image_tag @article.cover_image_url,  class: "img-responsive ml-3", style: "width:170px;height:170px;"%>
             <%else%>
               <%= image_tag "dummy.jpg", class: "img-responsive ml-3 ", style: "width:170px;height:170px;" %>
             <% end %>  
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-4">
+                <a target="_blank" href="https://twitter.com/share?url=https://weekend-pros.herokuapp.com/articles/<%= "#{@article.id}" %>&title=<%= "#{@article.title}" %>">
+                  <div>
+                    <%= image_tag "twitter.png", class: "pull-right twitter-btn"%>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4"> 
+                <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https://weekend-pros.herokuapp.com/articles/<%= "#{@article.id}" %>&title=<%= "#{@article.title}" %>&source=LinkedIn">
+                  <%= image_tag "Linkedin-icon-8.png", class: "pull-right linkedin-btn"%>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a target="_blank" href="https://plus.google.com/share?url=https://weekend-pros.herokuapp.com/articles/<%= "#{@article.id}" %>">
+                  <%= image_tag "gogle_plus_share_icon.png", class: "googleplus-btn"%>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
