@@ -1,0 +1,27 @@
+<div class="container mt-5 mb-5">
+  <h1 class="text-center">Lectures</h1>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Topic name</th>
+          <th>Actions</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @lectures.each do |lecture| %>
+          <tr>
+            <td><%= lecture.topic_name %></td>
+            <td><%= link_to 'Show', lecture %>
+              <%= link_to 'Edit', edit_lecture_path(lecture) %>
+              <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>  
+  <%= link_to 'New Lecture', new_lecture_path,class: "btn btn-outline-primary" %>
+</div>  
+
