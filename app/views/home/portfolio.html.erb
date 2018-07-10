@@ -14,7 +14,7 @@
     <% @articles.each do |article| %>
       <div class="row"> 
         <div class="item">
-          <div class="card mt-1 mb-1 card-pro-d article-card" style="width: 348px;height: 450px;" >
+          <div class="card mt-1 mb-1 card-pro-d article-card p-3" style="width: 348px;height: 450px;" >
             <% if article.cover_image_url.present? %>
              <%= image_tag article.cover_image_url, class: "card-img-top" %>
             <%else%>
