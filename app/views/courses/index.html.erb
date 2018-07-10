@@ -1,0 +1,37 @@
+<div class="container">
+  <% if !user_signed_in?%>
+    <div class="article-heading mt-5">
+      <h2><%= link_to ' Add New Course', new_course_path,class: "btn btn-auth", "data-toggle" => "modal", "data-target" => "#myModal"%></h2>
+      <hr>
+    </div>
+  <%else%>
+    <div class="article-heading mt-5">
+      <h2><%= link_to ' Add New Course', new_course_path,class: "btn btn-auth"%></h2>
+      <hr>
+    </div> 
+  <%end%>   
+  <div class="row">
+    <% @courses.each do |course| %>
+      <div class="col-md-4">
+        <div class="card">
+          <% if course.banner_image.present? %>
+            <%= image_tag course.banner_image_url, class: "card-img-top" %>
+          <%else%>
+           <%= image_tag "dummy.jpg", class: "img-responsive" %>
+          <% end %>   
+          <div class="card-body">
+            <h5 class="card-title"> <%= course.course_name %></h5>
+            <div class="address-pro">
+              <p class="card-text"><%=truncate(sanitize(course.description, tags: []), length: 150)%></p><br>
+              <div>
+                <%= link_to "View Course",course_path(course), class: "btn btn-auth" %>
+                </i>
+              </div>  
+            </div> 
+          </div>
+        </div> 
+      </div>  
+    <% end %>  
+  </div> 
+  <%= paginate @courses %>  
+</div>  

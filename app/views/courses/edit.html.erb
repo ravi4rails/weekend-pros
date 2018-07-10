@@ -1,0 +1,18 @@
+<div class="container mt-5 mb-5">
+  <div class="back-link ml-5 mt-4">
+    <button class="btn back-link-btn"><i class="fa fa-arrow-left"></i> <%=link_to "Back", courses_path, class: "text-white"%></button>
+    <button class="btn back-link-btn"><i class="fa fa-arrow-left"></i> <%=link_to "Back", course_path, class: "text-white"%></button>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-8 offset-2">
+      <div class="card">
+        <div class="card-header">
+          <h3>Editing Course</h3>
+        </div>
+        <div class="card-body">
+          <%= render 'form', course: @course %>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>        

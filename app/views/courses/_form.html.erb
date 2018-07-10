@@ -1,0 +1,36 @@
+<%= form_with(model: course, local: true) do |form| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.text_field :course_name, id: :course_course_name, class: "form-control" , placeholder: "Course Name"%>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.text_area :description, id: :course_description, class: "form-control" , placeholder: "Description", 'data-provider': :summernote%>
+  </div>
+
+  <div class="form-group">
+    <label>Banner Image</label><br>
+    <%= form.file_field :banner_image, id: :course_banner_image %>
+  </div>
+ 
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+
+  <div class="actions form-group">
+    <%= form.submit class: "btn btn-block btn-auth shadow" %>
+  </div>
+<% end %>
+
+
